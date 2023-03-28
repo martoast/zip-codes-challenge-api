@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Settlement;
+use App\Models\ZipCode;
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,10 +14,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+        Schema::create('settlement_zip_code', function (Blueprint $table) {
+            $table->foreignIdFor(Settlement::class)->constrained();
+            $table->foreignIdFor(ZipCode::class)->constrained();
         });
     }
 
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('password_reset_tokens');
+        Schema::dropIfExists('settlement_zip_code');
     }
 };
