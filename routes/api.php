@@ -15,16 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::controller(ZipCodeController::class)->group(function () {
-    Route::prefix('zip-codes')
-        ->as('zip-codes.')
-        ->group(function () {
-            Route::get('/', 'index')->name('index');
-
-            Route::prefix('{zip_code}')->group(function() {
-                Route::get('/', 'show')->name('show');
-            });
-        });
+Route::prefix('zip-codes')->group(function () {
+    Route::get('/', [ZipCodeController::class, 'index'])->name('zip-codes.index');
+    Route::get('/{zip_code}', [ZipCodeController::class, 'show'])->name('zip-codes.show');
 });
 
 Route::get('/live', function (Request $request) {
