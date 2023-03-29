@@ -17,6 +17,7 @@ return new class extends Migration
         Schema::create('settlement_zip_code', function (Blueprint $table) {
             $table->foreignIdFor(Settlement::class)->constrained();
             $table->foreignIdFor(ZipCode::class)->constrained();
+            $table->primary(['settlement_id', 'zip_code_id']);
         });
     }
 
