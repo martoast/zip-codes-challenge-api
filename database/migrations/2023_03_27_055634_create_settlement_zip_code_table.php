@@ -15,9 +15,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('settlement_zip_code', function (Blueprint $table) {
+            $table->id();
             $table->foreignIdFor(Settlement::class)->constrained();
             $table->foreignIdFor(ZipCode::class)->constrained();
-            $table->primary(['settlement_id', 'zip_code_id']);
         });
     }
 
