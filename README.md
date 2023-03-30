@@ -205,3 +205,21 @@ This allows us to run the following command to upload all Settlements for that F
     - Then, we search or create the zip code with its respective relationships to the municipality and federal entity created later.
     - Next, we search or create the settlement type. Finally, we search or create the settlement in question, attaching it to the zip code and settlement type created earlier. 
     - This process is repeated for each record in the CSV.
+
+4. Bash
+    - To avoid having to write a command for each Federal Entity individually, I created a bash file that includes all of them with their corresponding key and file path. This approach streamlines the process and allows for the efficient uploading of data. The bash file can be easily executed with the command bash upload-settlements.sh, simplifying the entire data upload process. This approach saves a significant amount of time and ensures that all Federal Entities are processed correctly and uniformly.
+
+<img width="881" alt="Screenshot 2023-01-18 at 15 14 49" src="https://user-images.githubusercontent.com/45053439/213315934-d6e61a2b-c392-4966-9963-e6df76c91051.png">
+
+This can be executed by simply running the command:
+
+    >bash upload-settlements.sh
+    
+    
+## Deployment
+
+
+
+    
+## Results
+
