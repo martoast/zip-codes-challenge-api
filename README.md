@@ -23,8 +23,7 @@ In pgAdmin, I used the ERD Diagram tool, which is a canvas for creating Entity-R
 - Settlements
 - Selttement Types
 
-![image](https://user-images.githubusercontent.com/45053439/213291435-81169c5c-1778-4943-8d21-2273be5d99c9.png)
-
+![image](https://i.imgur.com/iokaRAl.png)
 
 ## Laravel
 After verifying that the structure of my database was correct, I proceeded to create the Laravel project by deleting all unnecessary routes such as web and channel. I uninstalled the default Laravel Sanctum to avoid creating unnecessary migrations and proceeded to install my environment using ([Sail](https://laravel.com/docs/10.x/sail#main-content)).
@@ -64,13 +63,11 @@ The models were straightforward to create after the migrations were set up. I si
 
 > php artisan make:model ZipCode -mfsc
 
-The zip-code model was the most complicated of the bunch as it includes relationships with other models such as FederalEntity, Municipality, and Settlement. The "belongsTo" method is used to establish a one-to-many relationship between ZipCode and FederalEntity, Municipality. On the other hand, "belongsToMany" is used to establish a many-to-many relationship between ZipCode and Settlement. Additionally, there is a custom method called "resolveRouteBindingQuery" used to resolve the route binding.
+The zipcode model was the most complicated of the bunch as it includes relationships with other models such as FederalEntity, Municipality, and Settlement. The "belongsTo" method is used to establish a one-to-many relationship between ZipCode and FederalEntity, Municipality. On the other hand, "belongsToMany" is used to establish a many-to-many relationship between ZipCode and Settlement. Additionally, there is a custom method called "resolveRouteBindingQuery" used to resolve the route binding.
 
     > php artisan make:model ZipCode -mfsc
     
     // This creates the model along with the factory, seeder and controller
-
-### Zip-code model
 
 ```php
 /**
@@ -197,6 +194,8 @@ This allows us to run the following command to upload all Settlements for that F
 
     - We use the function `$this->withProgressBar($slice, function ($row) use ($federal_entity) {` to show a progress bar as the program uploads the data      from the csv
     
+    - <img width="473" src="https://i.imgur.com/2OOHTNS.png">
+    
     - Then mapping the column names with each record in the CSV to make the use of each field more readable and not relying on indices. This is achieved        by creating an array to group the columns, making it easier to match them. 
  
     - <img width="473" alt="Screenshot 2023-01-18 at 15 10 28" src="https://user-images.githubusercontent.com/45053439/213315277-46a4ab30-995e-44ed-9f71-63985e5c64e3.png">
@@ -218,8 +217,15 @@ This can be executed by simply running the command:
     
 ## Deployment
 
+![alt text](https://i.imgur.com/3xFdhZT.png)
 
+![alt text](https://i.imgur.com/chWJbSo.png)
 
-    
 ## Results
+
+![resultsimage](https://i.imgur.com/mPolPbm.png)
+
+
+## Conclusion 
+In conclusion, this project was a great learning experience for me. It allowed me to apply my skills and knowledge in web development and software engineering to create a fully functional API that can be used to retrieve data related to Mexican zipcodes. Through this project, I gained experience in developing API's with Laravel, connecting to a MySQL database cluster, deploying to DigitalOcean, and uploading mass amounts of data from CSV's to those clusters. I look forward to continuing to expand my skills and knowledge in this area and taking on more challenging projects in the future.
 
