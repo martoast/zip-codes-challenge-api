@@ -214,10 +214,21 @@ This can be executed by simply running the command:
 
     >bash upload-settlements.sh
     
+## Testing
+
+In the testing phase I focused on creating unit tests for all models and controller actions, checking for proper database migrations, ensuring correct validations, and eliminating errors. 
+
+<img width="260" alt="Screenshot 2023-01-18 at 13 39 54" src="https://user-images.githubusercontent.com/45053439/213300800-64998fcd-7c3f-4dea-a280-454975774db8.png">
+
+<img width="699" alt="Screenshot 2023-01-18 at 14 57 38" src="https://user-images.githubusercontent.com/45053439/213313554-9ebe53b3-4e5c-4ed6-b57b-087c63247733.png">
+
+<img width="700" alt="Screenshot 2023-01-18 at 13 39 54" src="https://i.imgur.com/3Yew3X1.png">
     
 ## Deployment
 
 ![alt text](https://i.imgur.com/3xFdhZT.png)
+
+![alt text](https://i.imgur.com/VbFIodM.png)
 
 ![alt text](https://i.imgur.com/chWJbSo.png)
 
