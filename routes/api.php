@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ZipCodeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('zip-codes')->group(function () {
+    Route::get('/', [ZipCodeController::class, 'index'])->name('zip-codes.index');
+    Route::get('/{zip_code}', [ZipCodeController::class, 'show'])->name('zip-codes.show');
+});
+
+Route::get('/live', function (Request $request) {
+    return ['success' => true];
 });
