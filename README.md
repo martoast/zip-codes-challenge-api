@@ -215,8 +215,7 @@ This can be executed by simply running the command:
     >bash upload-settlements.sh
     
 ## Testing
-
-In the testing phase I focused on creating unit tests for all models and controller actions, checking for proper database migrations, ensuring correct validations, and eliminating errors. 
+As part of the testing phase, I wrote several functions to test the API endpoints and ensure that the data being returned matched the expected structure. These tests included checking that the API was live and responding correctly, testing pagination for zip codes, ensuring that created zip codes were being returned correctly, and verifying that a single zip code was returned with the appropriate settlements and settlement types. By running these tests, I was able to catch any errors or issues with the API and make necessary adjustments before deploying to production.
 
 <img width="260" alt="Screenshot 2023-01-18 at 13 39 54" src="https://user-images.githubusercontent.com/45053439/213300800-64998fcd-7c3f-4dea-a280-454975774db8.png">
 
